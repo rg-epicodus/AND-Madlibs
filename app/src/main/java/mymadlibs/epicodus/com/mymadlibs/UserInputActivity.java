@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import static mymadlibs.epicodus.com.mymadlibs.R.id.radioButton1;
+import static mymadlibs.epicodus.com.mymadlibs.R.id.radioButton2;
+
 public class UserInputActivity extends AppCompatActivity {
     private RadioGroup mChooseStoryButton;
     private EditText mNounEditText;
@@ -38,12 +41,27 @@ public class UserInputActivity extends AppCompatActivity {
                 int selectedId = surveyRadioGroup.getCheckedRadioButtonId();
                 final RadioButton selectedRadioButton = (RadioButton) findViewById(selectedId);
 
+                if(selectedId == radioButton1) {
+                    Intent intent = new Intent(UserInputActivity.this, DisplayStoryActivity.class);
+                    intent.putExtra("noun", noun);
+                    intent.putExtra("verb", verb);
+                    intent.putExtra("adjective", adjective);
+                    startActivity(intent);
+                } else if (selectedId == radioButton2) {
+                    Intent intent = new Intent(UserInputActivity.this, DisplayStoryActivity2.class);
+                    intent.putExtra("noun", noun);
+                    intent.putExtra("verb", verb);
+                    intent.putExtra("adjective", adjective);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(UserInputActivity.this, DisplayStoryActivity3.class);
 
-                Intent intent = new Intent(UserInputActivity.this, DisplayStoryActivity.class);
-                intent.putExtra("noun", noun);
-                intent.putExtra("verb", verb);
-                intent.putExtra("adjective", adjective);
-                startActivity(intent);
+                    intent.putExtra("noun", noun);
+                    intent.putExtra("verb", verb);
+                    intent.putExtra("adjective", adjective);
+                    startActivity(intent);
+                }
+
             }
         });
     }

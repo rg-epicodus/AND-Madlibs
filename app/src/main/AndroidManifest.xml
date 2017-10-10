@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".UserInputActivity"></activity>
         <activity android:name=".DisplayStoryActivity"></activity>
+        <activity android:name=".DisplayStoryActivity2"></activity>
+        <activity android:name=".DisplayStoryActivity3"></activity>
     </application>
 
 </manifest>

@@ -4,20 +4,26 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_above="@+id/storyRadioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:id="@+id/relativeLayout">
 
         <EditText
             android:id="@+id/nounEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:background="?attr/colorButtonNormal"
             android:hint="Enter a Noun"
             android:padding="5dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_alignEnd="@+id/adjectiveEditText" />
 
         <EditText
             android:id="@+id/adjectiveEditText"
@@ -25,6 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/nounEditText"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
             android:background="?attr/colorButtonNormal"
             android:hint="Enter an Adjective"
             android:padding="5dp"
@@ -36,10 +44,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/adjectiveEditText"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:background="?attr/colorButtonNormal"
             android:hint="Enter a verb"
             android:padding="5dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:layout_alignEnd="@+id/adjectiveEditText" />
 
     </RelativeLayout>
 
@@ -48,37 +60,50 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
-
-        <RadioGroup
-            android:id="@+id/storyRadioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <RadioButton
-                android:id="@+id/radioButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Haunted House" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Enchanted Forest" />
-
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
-                android:text="Galactic Adventure" />
-        </RadioGroup>
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
     </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/storyRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/relativeLayout">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Haunted House" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enchanted Forest" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="Galactic Adventure" />
+
+        <Button
+            android:id="@+id/chooseStoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="53dp"
+            android:layout_weight="1"
+            android:text="Submit" />
+    </RadioGroup>
+
+
 </RelativeLayout>
