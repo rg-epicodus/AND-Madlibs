@@ -10,7 +10,7 @@
         android:scaleType="centerCrop" />
 
     <Button
-        android:id="@+id/findRestaurantButton"
+        android:id="@+id/userInputButton"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="begin your story"
